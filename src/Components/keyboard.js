@@ -10,6 +10,7 @@ const Keyboard = (props) => {
         buff = buff + variable;
         props.changeExpression(buff);
         console.log(buff);
+        console.log('')
     }
 
     const deleteLastSymbol = () => {
