@@ -1,5 +1,6 @@
 import React from 'react';
 import {message, notification} from 'antd';
+import {countAnd} from "../core";
 
 const Keyboard = (props) => {
 
@@ -27,7 +28,16 @@ const Keyboard = (props) => {
 
     const count = (e) =>{
        if(props.expression)
-           message.success('Ваш запрос обрабатывается')
+       {
+           if(props.expression.includes('\u2227')){
+               const result = countAnd()
+               message.success(result)
+           }
+           else{
+               message.success('Ваш ')
+           }
+       }
+
         else
            message.error('Пусто!')
 
